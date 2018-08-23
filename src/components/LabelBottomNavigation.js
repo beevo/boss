@@ -25,10 +25,9 @@ class LabelBottomNavigation extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-    const { value } = this.state;
+    const { classes, currentApp } = this.props;
     return (
-      <BottomNavigation value={value} onChange={this.handleChange} className={classes.root}>
+      <BottomNavigation value={currentApp} onChange={this.handleChange} className={classes.root}>
         <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
         <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />

@@ -1,20 +1,20 @@
 import { connect } from 'react-redux'
-import { changeApp } from '../actions/application'
+import { changeApp } from '../actions/appAction'
 import LabelBottomNavigation from '../components/LabelBottomNavigation'
 
 const mapStateToProps = (state, ownProps) => {
   console.log(state);
   console.log(ownProps);
   return {
-    active: ownProps.filter === state.visibilityFilter
+    currentApp: state.app.current
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   console.log(ownProps);
   return {
-    onChange: () => {
-      dispatch(changeApp());
+    onChange: (value) => {
+      dispatch(changeApp(value));
       // dispatch(setVisibilityFilter(ownProps.filter))
     }
 }}
