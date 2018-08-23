@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
   console.log(state);
   console.log(ownProps);
   return {
-    currentApp: state.app.current
+    ...state.app
   }
 }
 

@@ -1,7 +1,33 @@
 import { CHANGE_APP } from '../actions/types';
 
 const initialState = {
-  current: 'recents'
+  currentIndex: 0,
+  apps: [
+    {
+      id: 0,
+      label: 'Codepad',
+      componentName: 'Codepad',
+      icon: 'code'
+    },
+    {
+      id: 1,
+      label: 'Wordpad',
+      componentName: 'Wordpad',
+      icon: 'insert_drive_file'
+    },
+    {
+      id: 2,
+      label: 'News Stand',
+      componentName: 'News',
+      icon: 'view_headline'
+    },
+    {
+      id: 3,
+      label: 'My Files',
+      componentName: 'Files',
+      icon: 'folder'
+    }
+  ]
 }
 
 export default function(state = initialState, action){
@@ -9,7 +35,7 @@ export default function(state = initialState, action){
     case CHANGE_APP:
       return {
         ...state,
-        current: action.payload
+        currentIndex: action.payload
       }
     default:
       return state;
