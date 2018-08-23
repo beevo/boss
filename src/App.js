@@ -4,6 +4,7 @@ import './App.css';
 import { Provider } from 'react-redux';
 import Posts from './components/Posts';
 import PostForm from './components/Postform';
+import BottomNav from './containers/BottomNav';
 
 import store from './store';
 
@@ -16,12 +17,18 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
           </header>
-          <PostForm />
-          <Posts />
+          {
+            // <PostForm />
+          }
+          {
+            // <Posts />
+          }
+          {
+            <BottomNav />
+          }
         </div>
       </Provider>
     );
   }
 }
-
 export default App;
