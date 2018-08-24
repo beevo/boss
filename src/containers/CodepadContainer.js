@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Codepad from '../components/Codepad.js'
-import { update } from '../actions/appAction'
+import { updateCodepadText } from '../actions/appAction'
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -11,10 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onChange: (value) => {
-      console.log("ready to dispact");
-      console.log(value);
-      dispatch(update(value));
-      // dispatch(setVisibilityFilter(ownProps.filter))
+      dispatch(updateCodepadText(value));
     }
   }
 }

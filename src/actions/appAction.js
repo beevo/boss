@@ -1,5 +1,6 @@
 import { CHANGE_APP } from './types';
-import { UPDATE_TEXT } from './types';
+import { UPDATE_CODEPAD_TEXT } from './types';
+import { UPDATE_WORDPAD_TEXT } from './types';
 
 export const changeApp = (value) => (dispatch) => {
   dispatch({
@@ -8,9 +9,15 @@ export const changeApp = (value) => (dispatch) => {
   });
 }
 
-export const update = (value) => (dispatch) => {
+export const updateCodepadText = (value) => (dispatch) => {
   dispatch({
-    type: UPDATE_TEXT,
+    type: UPDATE_CODEPAD_TEXT,
+    payload: value
+  });
+}
+export const updateWordpadText = (value) => (dispatch) => {
+  dispatch({
+    type: UPDATE_WORDPAD_TEXT,
     payload: value
   });
 }

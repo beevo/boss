@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import Wordpad from '../components/Wordpad.js'
 
+import { updateWordpadText } from '../actions/appAction'
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -9,7 +10,12 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {}
+  console.log("wordpad dispatch");
+  return {
+    onChange: (value) => {
+      dispatch(updateWordpadText(value));
+    }
+  }
 }
 
 export default connect(

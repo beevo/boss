@@ -1,4 +1,4 @@
-import { UPDATE_TEXT } from '../actions/types';
+import { UPDATE_WORDPAD_TEXT } from '../actions/types';
 
 const initialState = {
   name: "helloworld.doc",
@@ -7,7 +7,7 @@ const initialState = {
 
 export default function(state = initialState, action){
   switch (action.type) {
-    case UPDATE_TEXT:
+    case UPDATE_WORDPAD_TEXT:
       return {
         ...state,
         content: action.payload
@@ -15,4 +15,5 @@ export default function(state = initialState, action){
     default:
       return state;
   }
+    return state;
 }
