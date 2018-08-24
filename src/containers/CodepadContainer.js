@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import Codepad from '../components/Codepad.js'
-import { update } from '../actions/codepadAction'
-import LabelBottomNavigation from '../components/LabelBottomNavigation'
+import { update } from '../actions/appAction'
 
 const mapStateToProps = (state, ownProps) => {
   return {
