@@ -1,4 +1,4 @@
-import { CHANGE_APP } from '../actions/types';
+import { UPDATE_CODEPAD_TEXT } from '../actions/types';
 
 const initialState = {
   name: "helloworld.js",
@@ -6,13 +6,15 @@ const initialState = {
 }
 
 export default function(state = initialState, action){
-  // switch (action.type) {
-  //   case CHANGE_APP:
-  //     return {
-  //       ...state,
-  //       currentIndex: action.payload
-  //     }
-  //   default:
+  console.log("UPDATE CODEPAD TEXT");
+  switch (action.type) {
+    case UPDATE_CODEPAD_TEXT:
+      return {
+        ...state,
+        content: action.payload
+      }
+      // return state;
+    default:
       return state;
-  // }
+  }
 }
