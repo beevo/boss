@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import brace from 'brace';
 import AceEditor from 'react-ace';
 import TextField from '@material-ui/core/TextField';
+import Icon from '@material-ui/core/Icon';
 
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
@@ -26,13 +27,19 @@ class Codepad extends Component {
   }
   render() {
     const { content, name } = this.props.codepad;
+    const app = this.props.app;
     const style = {
       float: 'left',
       paddingLeft: '10px'
     };
     return (
       <div>
-        <h3 style={style}>{name}</h3>
+        <h3 style={style}>
+          {
+            <Icon>{app.icon}</Icon>
+          }
+          {name}
+        </h3>
         <AceEditor
           value={content}
           mode="javascript"

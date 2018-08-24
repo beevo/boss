@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill'; // ES6
+import Icon from '@material-ui/core/Icon';
 
 class Wordpad extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Wordpad extends Component {
   render() {
 
     const { content, name } = this.props.wordpad;
+    const app = this.props.app;
     const headerStyle = {
       textAlign: 'left',
       paddingLeft: '10px',
@@ -28,7 +30,12 @@ class Wordpad extends Component {
     };
     return (
       <div>
-        <h3 style={headerStyle}>{name}</h3>
+        <h3 style={headerStyle}>
+          {
+            <Icon>{app.icon}</Icon>
+          }
+          {name}
+        </h3>
         <ReactQuill
           style={quillStyle}
           value={content}
