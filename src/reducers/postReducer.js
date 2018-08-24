@@ -7,10 +7,8 @@ const initialState = {
 }
 
 export default function(state = initialState, action){
-  console.log(state);
   switch (action.type) {
     case FETCH_POSTS:
-      console.log("FETCH POSTS IN REDUCER");
       return {
         ...state,
         items: action.payload

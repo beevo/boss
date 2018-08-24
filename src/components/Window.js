@@ -5,17 +5,12 @@ import CodepadContainer from '../containers/CodepadContainer';
 import NewsContainer from '../containers/NewsContainer.js';
 import WordpadContainer from '../containers/WordpadContainer.js';
 import FilesContainer from '../containers/FilesContainer.js';
-class App extends Component {
+class Window extends Component {
   componentWillMount(){
-    console.log("will mount");
-    // this.props.fetchPosts();
   }
 
   componentWillReceiveProps(nextProps){
-    console.log("received props",nextProps);
-    // if (nextProps.newPost) {
-    //   this.props.posts.unshift(nextProps.newPost);
-    // }
+
   }
 
   render() {
@@ -48,7 +43,7 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+Window.propTypes = {
 }
-export default App;
+export default Window;
 // export default connect(mapStateToProps, { fetchPosts })(Posts);
