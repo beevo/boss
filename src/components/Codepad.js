@@ -22,7 +22,7 @@ class Codepad extends Component {
     // this.setState({ text: value })
   }
   componentWillUnmount() {
-    alert("UNMOUNTING");
+    console.log("Unmounting");
   }
   render() {
     const { content, name } = this.props.codepad;

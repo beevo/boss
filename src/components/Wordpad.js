@@ -11,19 +11,31 @@ class Wordpad extends Component {
   }
 
   handleChange(value) {
-    this.setState({ text: value })
+    this.props.onChange(value);
   }
 
   render() {
-    const style = {
+
+    const { content, name } = this.props.wordpad;
+    const headerStyle = {
+      textAlign: 'left',
+      paddingLeft: '10px',
+      width: '100%'
+    };
+    const quillStyle = {
       height: '460px',
       paddingBottom: '40px'
     };
     return (
-      <ReactQuill
-        style={style}
-        value={this.state.text}
-        onChange={this.handleChange} />
+      <div>
+        <h3 style={headerStyle}>{name}</h3>
+        <ReactQuill
+          style={quillStyle}
+          value={content}
+          onChange={this.handleChange}
+        />
+      </div>
+
     )
   }
 }
