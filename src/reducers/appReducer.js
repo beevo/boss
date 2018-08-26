@@ -1,7 +1,7 @@
 import { CHANGE_APP } from '../actions/types';
 
 const initialState = {
-  currentIndex: 0,
+  currentIndex: 2,
   apps: [
     {
       id: 0,
