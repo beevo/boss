@@ -18,15 +18,14 @@ class Wordpad extends Component {
 
   render() {
 
-    const { content, name } = this.props.wordpad;
-    const app = this.props.app;
+    const { content, name, icon } = this.props;
     const quillStyle = {
       height: '210px',
       paddingBottom: '40px'
     };
     return (
       <div>
-        <AppHeader icon={app.icon} name={name} />
+        <AppHeader icon={icon} name={name} />
         <ReactQuill
           style={quillStyle}
           value={content}

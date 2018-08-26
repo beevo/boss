@@ -26,15 +26,14 @@ class Codepad extends Component {
     console.log("Unmounting");
   }
   render() {
-    const { content, name } = this.props.codepad;
-    const app = this.props.app;
+    const { content, name, icon } = this.props;
     const style = {
       float: 'left',
       paddingLeft: '10px'
     };
     return (
       <div>
-        <AppHeader icon={app.icon} name={name} />
+        <AppHeader icon={icon} name={name} />
 
         <AceEditor
           value={content}

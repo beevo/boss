@@ -4,9 +4,11 @@ import { updateCodepadText } from '../actions/appAction'
 
 const mapStateToProps = (state, ownProps) => {
   console.log(state);
+  const { currentIndex } = state.app;
+  const { icon } = state.app.apps[currentIndex];
   return {
-    codepad: state.codepad,
-    app: state.app.apps[state.app.currentIndex]
+    ...state.codepad,
+    icon: icon
   }
 }
 
