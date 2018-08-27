@@ -4,7 +4,7 @@ import Window from '../components/Window.js'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    app: state.app.apps[state.app.currentIndex]
+    ...state.app.apps[state.app.currentIndex]
   }
 }
 

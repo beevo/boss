@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { render } from 'react-dom';
 import brace from 'brace';
 import AceEditor from 'react-ace';
+import AppHeader from '../components/AppHeader';
 import TextField from '@material-ui/core/TextField';
-import Icon from '@material-ui/core/Icon';
 
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
@@ -26,20 +26,15 @@ class Codepad extends Component {
     console.log("Unmounting");
   }
   render() {
-    const { content, name } = this.props.codepad;
-    const app = this.props.app;
+    const { content, name, icon } = this.props;
     const style = {
       float: 'left',
       paddingLeft: '10px'
     };
     return (
       <div>
-        <h3 style={style}>
-          {
-            <Icon>{app.icon}</Icon>
-          }
-          {name}
-        </h3>
+        <AppHeader icon={icon} name={name} />
+
         <AceEditor
           value={content}
           mode="javascript"
@@ -48,6 +43,7 @@ class Codepad extends Component {
           name="brace-editor"
           editorProps={{$blockScrolling: true}}
           width='100%'
+          height='250px'
         />
     </div>
 

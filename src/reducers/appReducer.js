@@ -1,7 +1,7 @@
 import { CHANGE_APP } from '../actions/types';
 
 const initialState = {
-  currentIndex: 0,
+  currentIndex: 2,
   apps: [
     {
       id: 0,
@@ -19,7 +19,7 @@ const initialState = {
       id: 2,
       label: 'News Stand',
       componentName: 'News',
-      icon: 'view_headline'
+      icon: 'trending_up'
     },
     {
       id: 3,

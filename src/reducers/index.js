@@ -3,10 +3,12 @@ import postReducer from './postReducer';
 import appReducer from './appReducer';
 import codepadReducer from './codepadReducer';
 import wordpadReducer from './wordpadReducer';
+import newsReducer from './newsReducer';
 
 export default combineReducers({
   posts: postReducer,
   app: appReducer,
   codepad: codepadReducer,
-  wordpad: wordpadReducer
+  wordpad: wordpadReducer,
+  news: newsReducer
 });

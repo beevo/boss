@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill'; // ES6
 import Icon from '@material-ui/core/Icon';
+import AppHeader from '../components/AppHeader';
 
 class Wordpad extends Component {
   constructor(props) {
@@ -17,25 +18,14 @@ class Wordpad extends Component {
 
   render() {
 
-    const { content, name } = this.props.wordpad;
-    const app = this.props.app;
-    const headerStyle = {
-      textAlign: 'left',
-      paddingLeft: '10px',
-      width: '100%'
-    };
+    const { content, name, icon } = this.props;
     const quillStyle = {
-      height: '460px',
+      height: '210px',
       paddingBottom: '40px'
     };
     return (
       <div>
-        <h3 style={headerStyle}>
-          {
-            <Icon>{app.icon}</Icon>
-          }
-          {name}
-        </h3>
+        <AppHeader icon={icon} name={name} />
         <ReactQuill
           style={quillStyle}
           value={content}

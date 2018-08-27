@@ -5,8 +5,8 @@ import { updateWordpadText } from '../actions/appAction'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    wordpad: state.wordpad,
-    app: state.app.apps[state.app.currentIndex]
+    ...state.wordpad,
+    icon: state.app.apps[state.app.currentIndex].icon
   }
 }
 

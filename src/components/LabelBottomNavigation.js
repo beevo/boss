@@ -10,7 +10,9 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const styles = {
   root: {
-    flex: 1,
+    width: '100%',
+    position: 'fixed',
+    bottom: '0px'
   },
 };
 

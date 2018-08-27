@@ -14,9 +14,8 @@ class Window extends Component {
   }
 
   render() {
-    const { app } = this.props;
-    console.log(app);
-    switch (app.componentName) {
+    const { componentName } = this.props;
+    switch (componentName) {
       case 'Codepad':
         return (
           <CodepadContainer />
@@ -35,7 +34,7 @@ class Window extends Component {
         );
       default:
         return (
-          <div>Component {app.componentName} not installed.</div>
+          <div>Component {componentName} not installed.</div>
         );
         break;
     }
