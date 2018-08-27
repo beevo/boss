@@ -4,11 +4,13 @@ import appReducer from './appReducer';
 import codepadReducer from './codepadReducer';
 import wordpadReducer from './wordpadReducer';
 import newsReducer from './newsReducer';
+import filesReducer from './filesReducer';
 
 export default combineReducers({
   posts: postReducer,
   app: appReducer,
   codepad: codepadReducer,
   wordpad: wordpadReducer,
-  news: newsReducer
+  news: newsReducer,
+  files: filesReducer
 });
