@@ -6,9 +6,8 @@ const mapStateToProps = (state, ownProps) => {
   const { currentIndex } = state.app;
   const { icon } = state.app.apps[currentIndex];
   return {
-    // ...state.codepad,
+    ...state.news,
     icon: icon,
-    name: 'Today'
   }
 }
 

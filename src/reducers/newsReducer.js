@@ -1,7 +1,7 @@
 import { FETCH_NEWS } from '../actions/types';
 
 const initialState = {
-  name: "New York Times: " + new Date().toJSON().slice(0,10).replace(/-/g,'/'),
+  name: "New York Times - " + new Date().toJSON().slice(0,10).replace(/-/g,'/'),
   content: null
 }
 
