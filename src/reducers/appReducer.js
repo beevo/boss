@@ -19,7 +19,7 @@ const initialState = {
       id: 2,
       label: 'News Stand',
       componentName: 'News',
-      icon: 'view_headline'
+      icon: 'trending_up'
     },
     {
       id: 3,
