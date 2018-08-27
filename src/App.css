@@ -5,3 +5,10 @@
 .App{
   padding-bottom: 50px;
 }
+.app-container{
+  max-width: 1024px;
+  margin: auto;
+}
+.icon-button{
+  color: #FFF !important;
+}

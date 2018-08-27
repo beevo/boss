@@ -56,9 +56,12 @@ class Codepad extends Component {
               title={tile.title}
               subtitle={<span>{tile.abstract}</span>}
               actionIcon={
-                <IconButton className="icon">
-                  <InfoIcon />
-                </IconButton>
+                <a href={tile.url} target="_blank">
+                  <IconButton className="icon-button">
+                    <InfoIcon />
+                  </IconButton>
+                </a>
+
               }
             />
           </GridListTile>
@@ -69,9 +72,12 @@ class Codepad extends Component {
     return (
       <div className="root">
         <AppHeader icon={icon} name={name} />
-        <GridList cellHeight={300} className="gridList">
-          {newsItems}
-        </GridList>
+        <div className="app-container">
+          <GridList cellHeight={300} className="gridList">
+            {newsItems}
+          </GridList>
+        </div>
+
       </div>
 
     )
