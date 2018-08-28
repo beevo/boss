@@ -3,11 +3,11 @@ import Codepad from '../components/Codepad.js'
 import { updateCodepadText } from '../actions/appAction'
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
-  const { currentIndex } = state.app;
-  const { icon } = state.app.apps[currentIndex];
+  const { app, codepad } = state;
+  const { currentIndex, files, apps } = app;
+  const { icon } = apps[currentIndex];
   return {
-    ...state.codepad,
+    file: files[codepad.currentFileId],
     icon: icon
   }
 }

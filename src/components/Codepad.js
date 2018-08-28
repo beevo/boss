@@ -27,20 +27,20 @@ class Codepad extends Component {
     console.log("Unmounting");
   }
   render() {
-    const { content, name, icon } = this.props;
+    const { icon, file } = this.props;
     const style = {
       float: 'left',
       paddingLeft: '10px'
     };
     return (
       <div>
-        <AppHeader icon={icon} name={name} />
+        <AppHeader icon={icon} name={file.name} />
         <Toolbar>
           <FileMenu />
         </Toolbar>
         <div className="app-container">
           <AceEditor
-            value={content}
+            value={file.content}
             mode="javascript"
             theme="monokai"
             onChange={this.handleChange}

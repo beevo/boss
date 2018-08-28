@@ -1,8 +1,7 @@
 import { connect } from 'react-redux'
 import News from '../components/News.js';
-import { fetchNews } from '../actions/appAction'
+import { fetchNews } from '../actions/appAction';
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   const { currentIndex } = state.app;
   const { icon } = state.app.apps[currentIndex];
   return {
