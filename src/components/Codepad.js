@@ -5,7 +5,8 @@ import brace from 'brace';
 import AceEditor from 'react-ace';
 import AppHeader from '../components/AppHeader';
 import TextField from '@material-ui/core/TextField';
-
+import Toolbar from '../components/Toolbar';
+import FileMenu from '../components/FileMenu';
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
 
@@ -34,6 +35,9 @@ class Codepad extends Component {
     return (
       <div>
         <AppHeader icon={icon} name={name} />
+        <Toolbar>
+          <FileMenu />
+        </Toolbar>
         <div className="app-container">
           <AceEditor
             value={content}
@@ -43,7 +47,7 @@ class Codepad extends Component {
             name="brace-editor"
             editorProps={{$blockScrolling: true}}
             width='100%'
-            height='75vh'
+            height='70vh'
           />
         </div>
 
