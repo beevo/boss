@@ -42,6 +42,7 @@ class Codepad extends Component {
     if (content) {
     console.log(content[0].multimedia[0].url);
       newsItems = content.map((tile, key) => {
+        if (key > 20) return;
         console.log(tile.multimedia);
         let imgUrl = '';
         if (tile.multimedia[4]) {
