@@ -20,17 +20,20 @@ class Wordpad extends Component {
 
     const { content, name, icon } = this.props;
     const quillStyle = {
-      height: '210px',
+      height: '70vh',
       paddingBottom: '40px'
     };
     return (
       <div>
         <AppHeader icon={icon} name={name} />
-        <ReactQuill
-          style={quillStyle}
-          value={content}
-          onChange={this.handleChange}
-        />
+        <div className="app-container">
+          <ReactQuill
+            style={quillStyle}
+            value={content}
+            onChange={this.handleChange}
+          />
+        </div>
+
       </div>
 
     )

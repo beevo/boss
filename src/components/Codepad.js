@@ -34,17 +34,19 @@ class Codepad extends Component {
     return (
       <div>
         <AppHeader icon={icon} name={name} />
+        <div className="app-container">
+          <AceEditor
+            value={content}
+            mode="javascript"
+            theme="monokai"
+            onChange={this.handleChange}
+            name="brace-editor"
+            editorProps={{$blockScrolling: true}}
+            width='100%'
+            height='75vh'
+          />
+        </div>
 
-        <AceEditor
-          value={content}
-          mode="javascript"
-          theme="monokai"
-          onChange={this.handleChange}
-          name="brace-editor"
-          editorProps={{$blockScrolling: true}}
-          width='100%'
-          height='250px'
-        />
     </div>
 
     )
