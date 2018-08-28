@@ -1,20 +1,20 @@
-import { connect } from 'react-redux'
-import Wordpad from '../components/Wordpad.js'
-
-import { updateWordpadText } from '../actions/appAction'
+import { connect } from 'react-redux';
+import Wordpad from '../components/Wordpad.js';
+import { updateText } from '../actions/appAction';
 
 const mapStateToProps = (state, ownProps) => {
+  const { currentIndex, files, apps } = state.app;
+  const wordpad = apps[currentIndex];
   return {
-    ...state.wordpad,
-    icon: state.app.apps[state.app.currentIndex].icon
+    file: files[wordpad.currentFileId],
+    icon: wordpad.icon
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log("wordpad dispatch");
   return {
-    onChange: (value) => {
-      dispatch(updateWordpadText(value));
+    onChange: (value, fileId) => {
+      dispatch(updateText(value,fileId));
     }
   }
 }

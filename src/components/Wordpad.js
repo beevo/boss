@@ -13,23 +13,23 @@ class Wordpad extends Component {
   }
 
   handleChange(value) {
-    this.props.onChange(value);
+    this.props.onChange(value,this.props.file.id);
   }
 
   render() {
 
-    const { content, name, icon } = this.props;
+    const { file, icon } = this.props;
     const quillStyle = {
       height: '70vh',
       paddingBottom: '40px'
     };
     return (
       <div>
-        <AppHeader icon={icon} name={name} />
+        <AppHeader icon={icon} name={file.name} />
         <div className="app-container">
           <ReactQuill
             style={quillStyle}
-            value={content}
+            value={file.content}
             onChange={this.handleChange}
           />
         </div>

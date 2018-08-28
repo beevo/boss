@@ -1,7 +1,7 @@
 import { CHANGE_APP, UPDATE_TEXT } from '../actions/types';
 
 const initialState = {
-  currentIndex: 0,
+  currentIndex: 1,
   files: [
     {
       id: 0,
@@ -26,7 +26,8 @@ const initialState = {
       id: 1,
       label: 'Wordpad',
       componentName: 'Wordpad',
-      icon: 'insert_drive_file'
+      icon: 'insert_drive_file',
+      currentFileId: 1
     },
     {
       id: 2,
