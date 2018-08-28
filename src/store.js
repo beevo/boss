@@ -6,6 +6,10 @@ const initalState = {
   // items: [],
   // item: {}
 };
+const devtools = process.env.NODE_ENV === 'test'
+  ? x => x /* eslint-disable no-underscore-dangle */
+  : window.__REDUX_DEVTOOLS_EXTENSION__
+      && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const middleware = [thunk];
 
@@ -14,7 +18,7 @@ const store = createStore(
   initalState,
   compose(
     applyMiddleware(...middleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    devtools
   )
 
 );
