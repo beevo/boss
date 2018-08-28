@@ -41,32 +41,38 @@ class News extends Component {
     let newsItems = <span>Loading</span>
     if (content) {
     console.log(content[0].multimedia[0].url);
-      newsItems = content.map((tile, key) => {
-        if (key > 20) return;
-        console.log(tile.multimedia);
-        let imgUrl = '';
-        if (tile.multimedia[4]) {
-          imgUrl = tile.multimedia[4].url;
-        }else {
-          return;
-        }
-        return (
-          <GridListTile key={key}>
-            <img src={imgUrl} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>{tile.abstract}</span>}
-              actionIcon={
-                <a href={tile.url} target="_blank">
-                  <IconButton className="icon-button">
-                    <InfoIcon />
-                  </IconButton>
-                </a>
+    const viewWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    alert(viewWidth);
+    var MEDIA_INDEX = 4;
+    if (viewWidth < 1024) {
+      MEDIA_INDEX = 3;
+    }
+    newsItems = content.map((tile, key) => {
+      if (key > 20) return;
+      console.log(tile.multimedia);
+      let imgUrl = '';
+      if (tile.multimedia[MEDIA_INDEX]) {
+        imgUrl = tile.multimedia[MEDIA_INDEX].url;
+      }else {
+        return;
+      }
+      return (
+        <GridListTile key={key}>
+          <img src={imgUrl} />
+          <GridListTileBar
+            title={tile.title}
+            subtitle={<span>{tile.abstract}</span>}
+            actionIcon={
+              <a href={tile.url} target="_blank">
+                <IconButton className="icon-button">
+                  <InfoIcon />
+                </IconButton>
+              </a>
 
-              }
-            />
-          </GridListTile>
-      )});
+            }
+          />
+        </GridListTile>
+    )});
     }
     // console.log(newsItems);
     const style = {
