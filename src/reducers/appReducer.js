@@ -1,7 +1,7 @@
-import { CHANGE_APP, UPDATE_TEXT } from '../actions/types';
+import { CHANGE_APP, UPDATE_TEXT, CHANGE_FILE } from '../actions/types';
 
 const initialState = {
-  currentIndex: 1,
+  currentIndex: 0,
   files: [
     {
       id: 0,
@@ -43,24 +43,28 @@ const initialState = {
     }
   ]
 }
-
+const updateApp = (state, action) => (
+  state.apps.map((item, index) => {
+    if(item.id === action.payload.id) {
+      return {
+        ...action.payload
+      }
+    }
+    return item;
+  })
+);
 export default function(state = initialState, action){
   switch (action.type) {
-    // case UPDATE_TEXT:
-    //   const { fileId, value } = action.payload;
-    //   var new_files = state.files;
-    //   new_files.map((file, key) => {
-    //     if (file.id == fileId) file.content = value;
-    //     return file;
-    //   });;
-    //   return {
-    //     ...state,
-    //     files: new_files
-    //   }
     case CHANGE_APP:
       return {
         ...state,
         currentIndex: action.payload
+      }
+    case CHANGE_FILE:
+      console.log("CHANGE FILE");
+      return {
+        ...state,
+        files: updateApp(state, action)
       }
     default:
       return state;

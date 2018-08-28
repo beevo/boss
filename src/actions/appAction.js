@@ -1,5 +1,5 @@
 import { CHANGE_APP } from './types';
-import { UPDATE_CODEPAD_TEXT, UPDATE_WORDPAD_TEXT, FETCH_NEWS, UPDATE_TEXT }
+import { CHANGE_FILE, FETCH_NEWS, UPDATE_TEXT }
   from './types';
 // import { UPDATE_WORDPAD_TEXT } from './types';
 // import { FETCH_NEWS } from './types';
@@ -13,25 +13,9 @@ export const changeApp = (value) => (dispatch) => {
   });
 }
 
-export const updateText = (value, fileId) => (dispatch) => {
+export const changeFile = (value) => (dispatch) => {
   dispatch({
-    type: UPDATE_TEXT,
-    payload: {
-      value: value,
-      fileId, fileId
-    }
-  });
-}
-
-export const updateCodepadText = (value) => (dispatch) => {
-  dispatch({
-    type: UPDATE_CODEPAD_TEXT,
-    payload: value
-  });
-}
-export const updateWordpadText = (value) => (dispatch) => {
-  dispatch({
-    type: UPDATE_WORDPAD_TEXT,
+    type: CHANGE_FILE,
     payload: value
   });
 }

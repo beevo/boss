@@ -4,16 +4,21 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
 class FileMenu extends React.Component {
-  state = {
-    anchorEl: null,
-  };
+  constructor(props) {
+    super(props)
+    this.state = { anchorEl: null, } // You can also pass a Quill Delta here
+    this.handleOpenFile = this.handleOpenFile.bind(this)
+  }
 
   handleClick = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  handleClose = () => {
+  handleOpenFile = () => {
+    const { id } = this.props.app;
+    console.log(this.props);
     this.setState({ anchorEl: null });
+    this.props.onOpenFile(id, 1);
   };
 
   render() {
@@ -44,7 +49,7 @@ class FileMenu extends React.Component {
           onClose={this.handleClose}
         >
           <MenuItem onClick={this.handleClose}>New File</MenuItem>
-          <MenuItem onClick={this.handleClose}>Open File</MenuItem>
+          <MenuItem onClick={this.handleOpenFile}>Open File</MenuItem>
         </Menu>
       </div>
     );

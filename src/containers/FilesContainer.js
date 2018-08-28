@@ -1,10 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { connect } from 'react-redux'
+import Files from '../components/Files.js';
+import { fetchNews } from '../actions/appAction';
 
-const CodepadContainer = (props) => (
-  <div>
-    Files Container
-  </div>
-);
+const mapStateToProps = (state, ownProps) => {
+  // const { currentIndex } = state.app;
+  // const { icon } = state.app.apps[currentIndex];
+  return {
+    ...state
+  }
+}
 
-export default CodepadContainer;
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Files)

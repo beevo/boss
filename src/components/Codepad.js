@@ -6,7 +6,7 @@ import AceEditor from 'react-ace';
 import AppHeader from '../components/AppHeader';
 import TextField from '@material-ui/core/TextField';
 import Toolbar from '../components/Toolbar';
-import FileMenu from '../components/FileMenu';
+import FileMenuContainer from '../containers/FileMenuContainer';
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
 
@@ -34,7 +34,7 @@ class Codepad extends Component {
       <div>
         <AppHeader icon={icon} name={file.name} />
         <Toolbar>
-          <FileMenu />
+          <FileMenuContainer />
         </Toolbar>
         <div className="app-container">
           <AceEditor
