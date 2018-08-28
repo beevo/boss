@@ -5,14 +5,37 @@ const initialState = {
   content: null
 }
 
+const viewWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+var MEDIA_INDEX = 4;
+if (viewWidth < 1024) {
+  MEDIA_INDEX = 3;
+}
+
+const parseNews = (content) => {
+  return content.map((newsObj, key) => {
+
+    if (key > 20) return;
+    let imgUrl = '';
+    if (newsObj.multimedia[MEDIA_INDEX]) {
+      imgUrl = newsObj.multimedia[MEDIA_INDEX].url;
+    }else {
+      return;
+    }
+    return {
+      imgUrl: imgUrl,
+      title: newsObj.title,
+      abstract: newsObj.abstract,
+      url: newsObj.url
+    }
+  }).filter(n => n);
+}
 export default function(state = initialState, action){
   switch (action.type) {
     case FETCH_NEWS:
-      console.log(action);
-      console.log("FETCHING");
+
       return {
         ...state,
-        content: action.payload
+        content: parseNews(action.payload)
       }
       // return state;
     default:

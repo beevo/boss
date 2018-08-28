@@ -39,26 +39,13 @@ class News extends Component {
   render() {
     const { name, icon, content } = this.props;
     let newsItems = <span>Loading</span>
+    console.log(content);
     if (content) {
-    console.log(content[0].multimedia[0].url);
-    const viewWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    alert(viewWidth);
-    var MEDIA_INDEX = 4;
-    if (viewWidth < 1024) {
-      MEDIA_INDEX = 3;
-    }
+
     newsItems = content.map((tile, key) => {
-      if (key > 20) return;
-      console.log(tile.multimedia);
-      let imgUrl = '';
-      if (tile.multimedia[MEDIA_INDEX]) {
-        imgUrl = tile.multimedia[MEDIA_INDEX].url;
-      }else {
-        return;
-      }
       return (
         <GridListTile key={key}>
-          <img src={imgUrl} />
+          <img src={tile.imgUrl} />
           <GridListTileBar
             title={tile.title}
             subtitle={<span>{tile.abstract}</span>}
