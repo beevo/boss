@@ -29,7 +29,7 @@ const styles = theme => ({
 });
 
 
-class Codepad extends Component {
+class News extends Component {
   constructor(props) {
     super(props);
   }
@@ -69,11 +69,15 @@ class Codepad extends Component {
       )});
     }
     // console.log(newsItems);
-
+    const style = {
+      margin: 'auto',
+      maxWidth: '1024px',
+      paddingTop: '5px'
+    }
     return (
       <div className="root">
         <AppHeader icon={icon} name={name} />
-        <div className="app-container">
+        <div style={style}>
           <GridList cellHeight={300} className="gridList">
             {newsItems}
           </GridList>
@@ -85,4 +89,4 @@ class Codepad extends Component {
   }
 }
 
-export default Codepad;
+export default News;

@@ -1,21 +1,35 @@
+body{
+  background-color: #edeff0;
+}
 .footer{
   position: fixed;
   bottom: 1px;
 }
 .App{
   padding-bottom: 50px;
-  padding: 10px;
 }
 .app-container{
-  max-width: 1024px;
   margin: auto;
 }
 .icon-button{
   color: #FFF !important;
 }
 .ace_editor{
-  font-size: 1rem !important;
+  font-size: .75rem !important;
 }
 .ql-editor{
-  font-size: 1rem;
+  font-size: .75rem;
+}
+.ql-toolbar, .ql-container, .file-menu{
+  background: #FFF;
+}
+.ql-container{
+  max-width: 1024px;
+  margin: auto !important;
+  margin-top: 10px !important;
+  border-top: 1px solid #ccc !important;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+.gridList li{
+  padding: 0px !important;
 }

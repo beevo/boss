@@ -20,13 +20,22 @@ class FileMenu extends React.Component {
     const { anchorEl } = this.state;
 
     return (
-      <div>
+      <div className="file-menu">
         <Button
           aria-owns={anchorEl ? 'simple-menu' : null}
           aria-haspopup="true"
           onClick={this.handleClick}
         >
           FILE
+        </Button>
+        <Button disabled>
+          Edit
+        </Button>
+        <Button disabled>
+          View
+        </Button>
+        <Button>
+          About
         </Button>
         <Menu
           id="simple-menu"
