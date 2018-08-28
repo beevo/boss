@@ -1,4 +1,4 @@
-import { CHANGE_APP } from '../actions/types';
+import { CHANGE_APP, UPDATE_TEXT } from '../actions/types';
 
 const initialState = {
   currentIndex: 0,
@@ -19,7 +19,8 @@ const initialState = {
       id: 0,
       label: 'Codepad',
       componentName: 'Codepad',
-      icon: 'code'
+      icon: 'code',
+      currentFileId: 0
     },
     {
       id: 1,
@@ -44,6 +45,17 @@ const initialState = {
 
 export default function(state = initialState, action){
   switch (action.type) {
+    case UPDATE_TEXT:
+      const { fileId, value } = action.payload;
+      var new_files = state.files;
+      new_files.map((file, key) => {
+        if (file.id == fileId) file.content = value;
+        return file;
+      });;
+      return {
+        ...state,
+        files: new_files
+      }
     case CHANGE_APP:
       return {
         ...state,

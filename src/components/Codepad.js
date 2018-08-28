@@ -18,9 +18,7 @@ class Codepad extends Component {
   }
 
   handleChange(value) {
-    // console.log("XYD");
-    // console.log(value);
-    this.props.onChange(value);
+    this.props.onChange(value,this.props.file.id);
     // this.setState({ text: value })
   }
   componentWillUnmount() {
