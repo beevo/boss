@@ -46,17 +46,17 @@ const initialState = {
 
 export default function(state = initialState, action){
   switch (action.type) {
-    case UPDATE_TEXT:
-      const { fileId, value } = action.payload;
-      var new_files = state.files;
-      new_files.map((file, key) => {
-        if (file.id == fileId) file.content = value;
-        return file;
-      });;
-      return {
-        ...state,
-        files: new_files
-      }
+    // case UPDATE_TEXT:
+    //   const { fileId, value } = action.payload;
+    //   var new_files = state.files;
+    //   new_files.map((file, key) => {
+    //     if (file.id == fileId) file.content = value;
+    //     return file;
+    //   });;
+    //   return {
+    //     ...state,
+    //     files: new_files
+    //   }
     case CHANGE_APP:
       return {
         ...state,

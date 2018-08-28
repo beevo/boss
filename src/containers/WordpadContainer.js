@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import Wordpad from '../components/Wordpad.js';
-import { updateText } from '../actions/appAction';
+import { updateText } from '../actions/filesAction';
 
 const mapStateToProps = (state, ownProps) => {
-  const { currentIndex, files, apps } = state.app;
+  const { currentIndex, apps } = state.app;
   const wordpad = apps[currentIndex];
+  console.log(state);
   return {
-    file: files[wordpad.currentFileId],
+    file: state.files.items[wordpad.currentFileId],
     icon: wordpad.icon
   }
 }

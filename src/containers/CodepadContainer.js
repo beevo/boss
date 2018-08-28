@@ -1,12 +1,12 @@
 import { connect } from 'react-redux'
 import Codepad from '../components/Codepad.js'
-import { updateText } from '../actions/appAction'
+import { updateText } from '../actions/filesAction'
 
 const mapStateToProps = (state, ownProps) => {
-  const { currentIndex, files, apps } = state.app;
+  const { currentIndex, apps } = state.app;
   const codepad = apps[currentIndex];
   return {
-    file: files[codepad.currentFileId],
+    file: state.files.items[codepad.currentFileId],
     icon: codepad.icon
   }
 }
