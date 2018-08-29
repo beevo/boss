@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill'; // ES6
 import AppHeader from '../components/AppHeader';
+import Toolbar from '../components/Toolbar';
+import FileMenuContainer from '../containers/FileMenuContainer';
 
 class Wordpad extends Component {
   constructor(props) {
@@ -18,12 +20,15 @@ class Wordpad extends Component {
 
     const { file, icon } = this.props;
     const quillStyle = {
-      height: '70vh',
+      height: '60vh',
       paddingBottom: '40px'
     };
     return (
       <div>
         <AppHeader icon={icon} name={file.name} />
+        <Toolbar>
+          <FileMenuContainer />
+        </Toolbar>
         <div className="app-container">
           <ReactQuill
             style={quillStyle}
