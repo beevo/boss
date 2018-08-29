@@ -20,10 +20,10 @@ const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 class OpenFileDialog extends React.Component {
   handleClose = () => {
-    this.props.onClose(this.props.selectedValue);
+    this.props.onClose(-1);
   };
 
-  handleListItemClick = value => {
+  handleSelectFile= value => {
     this.props.onClose(value);
   };
 
@@ -31,12 +31,12 @@ class OpenFileDialog extends React.Component {
     const { onClose, selectedValue, open, files } = this.props;
 
     return (
-      <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" open={true}>
+      <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" open={open}>
         <DialogTitle id="simple-dialog-title">Select File</DialogTitle>
         <div>
           <List>
             {files.map((file, key) => (
-              <ListItem button onClick={() => this.handleListItemClick(file.id)} key={file.id}>
+              <ListItem button onClick={() => this.handleSelectFile(file.id)} key={file.id}>
                 <ListItemText primary={file.name} />
               </ListItem>
             ))}

@@ -7,22 +7,33 @@ import OpenFileDialog from '../components/OpenFileDialog.js';
 class FileMenu extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { anchorEl: null, } // You can also pass a Quill Delta here
+    this.state = {
+      anchorEl: null,
+      openDialog: false
+    } // You can also pass a Quill Delta here
     this.handleOpenFile = this.handleOpenFile.bind(this)
   }
-
+  handleClose = () => {
+   this.setState({ anchorEl: null });
+  };
   handleClick = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
-
-  handleOpenFile = () => {
+  handleOpenFileDialog = () => {
+    this.setState({ openDialog: true });
+  }
+  handleOpenFile = (fileId) => {
+    this.handleClose();
     const { id } = this.props.app;
-    this.setState({ anchorEl: null });
-    this.props.onOpenFile(id, 1);
+    if (fileId > -1) {
+      this.props.onOpenFile(id, fileId);
+    }
+    this.setState({ openDialog: false });
+    // this.props.onOpenFile(id, 1);
   };
 
   render() {
-    const { anchorEl } = this.state;
+    const { anchorEl, openDialog } = this.state;
     const { files } = this.props;
     console.log(files);
     return (
@@ -36,9 +47,9 @@ class FileMenu extends React.Component {
         </Button>
         <OpenFileDialog
           selectedValue={this.state.selectedValue}
-          open={false}
+          open={openDialog}
           files={files}
-          onClose={this.handleClose}
+          onClose={this.handleOpenFile}
         />
 
         <Button disabled>
@@ -57,7 +68,7 @@ class FileMenu extends React.Component {
           onClose={this.handleClose}
         >
           <MenuItem onClick={this.handleClose}>New File</MenuItem>
-          <MenuItem onClick={this.handleOpenFile}>Open File</MenuItem>
+          <MenuItem onClick={this.handleOpenFileDialog}>Open File</MenuItem>
         </Menu>
       </div>
     );
