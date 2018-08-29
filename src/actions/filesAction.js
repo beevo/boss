@@ -1,4 +1,4 @@
-import { UPDATE_TEXT } from './types';
+import { UPDATE_TEXT, CREATE_FILE } from './types';
 
 export const updateText = (value, fileId) => (dispatch) => {
   dispatch({
@@ -7,5 +7,11 @@ export const updateText = (value, fileId) => (dispatch) => {
       value: value,
       fileId: fileId
     }
+  });
+}
+export const createFile = (fileName) => (dispatch) => {
+  dispatch({
+    type: CREATE_FILE,
+    payload: fileName
   });
 }

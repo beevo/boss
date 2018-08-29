@@ -1,4 +1,4 @@
-import { UPDATE_TEXT } from '../actions/types';
+import { UPDATE_TEXT, CREATE_FILE } from '../actions/types';
 
 const initialState = {
   nextId: 2,
@@ -26,6 +26,7 @@ const updateItems = (items, content, fileId) => (
     return item;
   })
 );
+
 export default function(state = initialState, action){
   switch (action.type) {
     case UPDATE_TEXT:
@@ -33,6 +34,20 @@ export default function(state = initialState, action){
       return {
         ...state,
         items: updateItems(state.items, value, fileId)
+      }
+    case CREATE_FILE:
+      console.log(action);
+      console.log("CREaTE FILE");
+      return {
+        nextId: state.nextId+1,
+        items: [
+          ...state.items,
+          {
+            id: state.nextId,
+            name: action.payload.fileName,
+            content: ""
+          }
+        ]
       }
     default:
       return state;

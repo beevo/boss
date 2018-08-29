@@ -5,4 +5,5 @@ export const UPDATE_CODEPAD_TEXT = 'UPDATE_CODEPAD';
 export const UPDATE_WORDPAD_TEXT = 'UPDATE_WORDPAD';
 export const UPDATE_TEXT = 'UPDATE_TEXT';
 export const CHANGE_FILE = 'CHANGE_FILE';
+export const CREATE_FILE = 'CREATE_FILE';
 export const FETCH_NEWS = 'FETCH_NEWS';
