@@ -23,6 +23,15 @@ body{
 .ql-toolbar, .ql-container, .file-menu{
   background: #FFF;
 }
+.file-menu{
+  height: 25px;
+
+}
+.file-menu button{
+  min-height: 0px;
+  padding: 4px;
+  bottom: 2px;
+}
 .ql-container{
   max-width: 1024px;
   margin: auto !important;
@@ -32,4 +41,7 @@ body{
 }
 .gridList li{
   padding: 0px !important;
+}
+.toolBar{
+  min-height: 0px !important;
 }

@@ -40,7 +40,10 @@ class News extends Component {
     const style = {
       margin: 'auto',
       maxWidth: '1024px',
-      paddingTop: '5px'
+      paddingTop: '5px',
+      maxHeight: '1024px',
+      overflowY: 'auto',
+      overflowX: 'hidden',
     }
     return (
       <div className="root">

@@ -5,29 +5,24 @@ const initialState = {
   apps: [
     {
       id: 0,
+      label: 'Wordpad',
+      componentName: 'Wordpad',
+      icon: 'insert_drive_file',
+
+      currentFileId: 1
+    },
+    {
+      id: 1,
       label: 'Codepad',
       componentName: 'Codepad',
       icon: 'code',
       currentFileId: 0
     },
     {
-      id: 1,
-      label: 'Wordpad',
-      componentName: 'Wordpad',
-      icon: 'insert_drive_file',
-      currentFileId: 1
-    },
-    {
       id: 2,
       label: 'News Stand',
       componentName: 'News',
       icon: 'trending_up'
-    },
-    {
-      id: 3,
-      label: 'My Files',
-      componentName: 'Files',
-      icon: 'folder'
     }
   ]
 }

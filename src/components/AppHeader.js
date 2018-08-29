@@ -11,7 +11,7 @@ function AppHeader({icon,name}) {
 
   return (
     <AppBar position="static">
-      <Toolbar>
+      <Toolbar className="toolBar">
         <IconButton className="menuButton" color="inherit" aria-label="Menu">
           <Icon>{icon}</Icon>
         </IconButton>

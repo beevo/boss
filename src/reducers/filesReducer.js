@@ -10,8 +10,8 @@ const initialState = {
     },
     {
       id: 1,
-      name: "lorem.doc",
-      content: "<h1>Lorem</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+      name: "Welcome.doc",
+      content: `<h1>Welcome To Boss</h1><h2>Bee's Operating System Simulator</h2><ul><li>The wordpad app is using the open source quill editor.</li><li>Codepad is using the open source ace editor.</li><li>Both editors will save its content even if you change apps.</li><li>The News Stand is fetching data from the New York Times API.</li><li>Material-UI is the front end UI react framework used.</li></ul><p><br></p><p>This is my first react app. You can check out the source code <a href="https://github.com/beevo/boss" target="_blank">here</a>.</p><p><br></p><p>I'm open to any comments or constructive criticism.</p><p><br></p><p>Hope you enjoy this react demo.</p>`
     }
   ]
 };

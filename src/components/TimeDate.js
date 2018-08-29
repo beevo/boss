@@ -24,7 +24,7 @@ class TimeDate extends Component {
     let d = new Date();
     super(props);
     this.state = {
-      time: '10:20pm',
+      time: this.getTime(),
       date: `${d.getMonth()+1}/${d.getDate()}/${d.getFullYear()}`
     }
   }
@@ -34,7 +34,8 @@ class TimeDate extends Component {
     const style = {
       position: "absolute",
       right: "25px",
-      textAlign: "right"
+      textAlign: "right",
+      fontSize: '.8rem'
     }
     return (
       <div style={style}>
