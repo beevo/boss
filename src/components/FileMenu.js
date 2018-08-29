@@ -42,7 +42,6 @@ class FileMenu extends React.Component {
     // this.props.onOpenFile(id, 1);
   };
   handleNewFile = (fileName) => {
-    alert(fileName);
     this.handleClose();
     if (fileName) {
       const { id } = this.props.app;

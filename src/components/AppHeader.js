@@ -6,6 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
+import TimeDate from '../components/TimeDate';
 function AppHeader({icon,name}) {
 
   return (
@@ -17,7 +18,7 @@ function AppHeader({icon,name}) {
         <Typography variant="title" color="inherit" className="flex">
           {name}
         </Typography>
-        <div>Time</div>
+        <TimeDate />
       </Toolbar>
     </AppBar>
 

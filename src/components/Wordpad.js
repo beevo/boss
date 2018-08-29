@@ -11,7 +11,6 @@ class Wordpad extends Component {
     this.state = { text: '' } // You can also pass a Quill Delta here
     this.handleChange = this.handleChange.bind(this)
   }
-
   handleChange(value) {
     this.props.onChange(value,this.props.file.id);
   }
@@ -31,6 +30,7 @@ class Wordpad extends Component {
         </Toolbar>
         <div className="app-container">
           <ReactQuill
+            autoFocus
             style={quillStyle}
             value={file.content}
             onChange={this.handleChange}

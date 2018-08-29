@@ -35,7 +35,6 @@ class OpenFileDialog extends React.Component {
   };
 
   handleSubmit(event){
-    alert("SUBMIT");
     this.props.onClose(this.state.fileName);
     event.preventDefault();
   };
