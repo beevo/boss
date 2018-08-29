@@ -35,6 +35,7 @@ const updateApp = (state, action) => (
   state.apps.map((item, index) => {
     if(item.id === action.payload.id) {
       return {
+        ...item,
         ...action.payload
       }
     }
@@ -51,7 +52,7 @@ export default function(state = initialState, action){
     case CHANGE_FILE:
       return {
         ...state,
-        files: updateApp(state, action)
+        apps: updateApp(state, action)
       }
     default:
       return state;

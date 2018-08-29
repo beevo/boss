@@ -1,6 +1,5 @@
 import { CHANGE_APP } from './types';
-import { CHANGE_FILE, FETCH_NEWS }
-  from './types';
+import { CHANGE_FILE, FETCH_NEWS } from './types';
 // import { UPDATE_WORDPAD_TEXT } from './types';
 // import { FETCH_NEWS } from './types';
 const NYTIMES_API_KEY = '70fd55df9da846b7afe237a85c45914f';
