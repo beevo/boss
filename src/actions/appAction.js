@@ -1,5 +1,5 @@
 import { CHANGE_APP } from './types';
-import { CHANGE_FILE, FETCH_NEWS, UPDATE_TEXT }
+import { CHANGE_FILE, FETCH_NEWS }
   from './types';
 // import { UPDATE_WORDPAD_TEXT } from './types';
 // import { FETCH_NEWS } from './types';

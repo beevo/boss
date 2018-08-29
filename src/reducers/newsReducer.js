@@ -14,12 +14,12 @@ if (viewWidth < 1024) {
 const parseNews = (content) => {
   return content.map((newsObj, key) => {
 
-    if (key > 20) return;
+    if (key > 20) return null;
     let imgUrl = '';
     if (newsObj.multimedia[MEDIA_INDEX]) {
       imgUrl = newsObj.multimedia[MEDIA_INDEX].url;
     }else {
-      return;
+      return null;
     }
     return {
       imgUrl: imgUrl,

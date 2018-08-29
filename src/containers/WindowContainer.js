@@ -1,6 +1,5 @@
-import { connect } from 'react-redux'
-import { changeApp } from '../actions/appAction'
-import Window from '../components/Window.js'
+import { connect } from 'react-redux';
+import Window from '../components/Window.js';
 
 const mapStateToProps = (state, ownProps) => {
   return {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import CodepadContainer from '../containers/CodepadContainer';
 import NewsContainer from '../containers/NewsContainer.js';
@@ -36,13 +35,10 @@ class Window extends Component {
         return (
           <div>Component {componentName} not installed.</div>
         );
-        break;
     }
 
   }
 }
 
-Window.propTypes = {
-}
 export default Window;
 // export default connect(mapStateToProps, { fetchPosts })(Posts);

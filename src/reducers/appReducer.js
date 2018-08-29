@@ -1,4 +1,4 @@
-import { CHANGE_APP, UPDATE_TEXT, CHANGE_FILE } from '../actions/types';
+import { CHANGE_APP, CHANGE_FILE } from '../actions/types';
 
 const initialState = {
   currentIndex: 0,

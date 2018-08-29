@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill'; // ES6
-import Icon from '@material-ui/core/Icon';
 import AppHeader from '../components/AppHeader';
 
 class Wordpad extends Component {

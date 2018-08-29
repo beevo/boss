@@ -5,7 +5,7 @@ export const updateText = (value, fileId) => (dispatch) => {
     type: UPDATE_TEXT,
     payload: {
       value: value,
-      fileId, fileId
+      fileId: fileId
     }
   });
 }

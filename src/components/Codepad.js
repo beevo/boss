@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from "prop-types";
-import { render } from 'react-dom';
-import brace from 'brace';
 import AceEditor from 'react-ace';
 import AppHeader from '../components/AppHeader';
-import TextField from '@material-ui/core/TextField';
 import Toolbar from '../components/Toolbar';
 import FileMenuContainer from '../containers/FileMenuContainer';
 import 'brace/mode/javascript';
@@ -26,10 +22,6 @@ class Codepad extends Component {
   }
   render() {
     const { icon, file } = this.props;
-    const style = {
-      float: 'left',
-      paddingLeft: '10px'
-    };
     return (
       <div>
         <AppHeader icon={icon} name={file.name} />

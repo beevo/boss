@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,10 +8,6 @@ import Typography from '@material-ui/core/Typography';
 
 function AppHeader({icon,name}) {
 
-  const style = {
-    textAlign: 'left',
-    width: '100%'
-  }
   return (
     <AppBar position="static">
       <Toolbar>

@@ -1,38 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from "prop-types";
-import { render } from 'react-dom';
 import AppHeader from '../components/AppHeader';
 
-import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 
-const styles = theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
-  },
-  gridList: {
-    width: 500,
-    height: 450,
-  },
-  icon: {
-    color: 'rgba(255, 255, 255, 0.54)',
-  },
-});
 
 
 class News extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentWillMount() {
     this.props.fetch();
   }
@@ -45,7 +22,7 @@ class News extends Component {
     newsItems = content.map((tile, key) => {
       return (
         <GridListTile key={key}>
-          <img src={tile.imgUrl} />
+          <img src={tile.imgUrl} alt={tile.title} />
           <GridListTileBar
             title={tile.title}
             subtitle={<span>{tile.abstract}</span>}
