@@ -1,24 +1,16 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
-const initalState = {
-  // items: [],
-  // item: {}
-};
-const devtools = process.env.NODE_ENV === 'test'
-  ? x => x /* eslint-disable no-underscore-dangle */
-  : window.__REDUX_DEVTOOLS_EXTENSION__
-      && window.__REDUX_DEVTOOLS_EXTENSION__();
-
+const initalState = {};
 const middleware = [thunk];
 
 const store = createStore(
   rootReducer,
   initalState,
-  compose(
-    applyMiddleware(...middleware),
-    devtools
+  composeWithDevTools(
+    applyMiddleware(thunk)
   )
 
 );
