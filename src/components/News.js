@@ -41,7 +41,6 @@ class News extends Component {
       margin: 'auto',
       maxWidth: '1024px',
       paddingTop: '5px',
-      maxHeight: '1024px',
       overflowY: 'auto',
       overflowX: 'hidden',
     }
