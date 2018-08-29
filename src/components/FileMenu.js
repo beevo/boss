@@ -78,7 +78,7 @@ class FileMenu extends React.Component {
         <Button disabled>
           View
         </Button>
-        <Button>
+        <Button disabled>
           About
         </Button>
         <Menu
