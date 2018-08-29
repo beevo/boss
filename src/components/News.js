@@ -16,7 +16,6 @@ class News extends Component {
   render() {
     const { name, icon, content } = this.props;
     let newsItems = <span>Loading</span>
-    console.log(content);
     if (content) {
 
     newsItems = content.map((tile, key) => {
@@ -38,7 +37,6 @@ class News extends Component {
         </GridListTile>
     )});
     }
-    // console.log(newsItems);
     const style = {
       margin: 'auto',
       maxWidth: '1024px',

@@ -17,9 +17,6 @@ class Codepad extends Component {
     this.props.onChange(value,this.props.file.id);
     // this.setState({ text: value })
   }
-  componentWillUnmount() {
-    console.log("Unmounting");
-  }
   render() {
     const { icon, file } = this.props;
     return (

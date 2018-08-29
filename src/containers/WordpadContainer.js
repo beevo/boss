@@ -5,7 +5,6 @@ import { updateText } from '../actions/filesAction';
 const mapStateToProps = (state, ownProps) => {
   const { currentIndex, apps } = state.app;
   const wordpad = apps[currentIndex];
-  console.log(state);
   return {
     file: state.files.items[wordpad.currentFileId],
     icon: wordpad.icon

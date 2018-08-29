@@ -6,7 +6,7 @@ const initialState = {
     {
       id: 0,
       name: "helloworld.js",
-      content: "console.log('hello world')"
+      content: "var foo = 'bar';"
     },
     {
       id: 1,

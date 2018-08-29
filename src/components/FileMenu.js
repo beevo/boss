@@ -16,7 +16,6 @@ class FileMenu extends React.Component {
 
   handleOpenFile = () => {
     const { id } = this.props.app;
-    console.log(this.props);
     this.setState({ anchorEl: null });
     this.props.onOpenFile(id, 1);
   };
