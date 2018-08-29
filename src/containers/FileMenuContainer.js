@@ -5,7 +5,8 @@ import { changeFile } from '../actions/appAction';
 const mapStateToProps = (state, ownProps) => {
   const { currentIndex } = state.app;
   return {
-    app: state.app.apps[currentIndex]
+    app: state.app.apps[currentIndex],
+    files: state.files.items
   }
 }
 

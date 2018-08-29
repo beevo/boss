@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import OpenFileDialog from '../components/OpenFileDialog.js';
 
 class FileMenu extends React.Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class FileMenu extends React.Component {
 
   render() {
     const { anchorEl } = this.state;
-
+    const { files } = this.props;
+    console.log(files);
     return (
       <div className="file-menu">
         <Button
@@ -32,6 +34,13 @@ class FileMenu extends React.Component {
         >
           FILE
         </Button>
+        <OpenFileDialog
+          selectedValue={this.state.selectedValue}
+          open={false}
+          files={files}
+          onClose={this.handleClose}
+        />
+
         <Button disabled>
           Edit
         </Button>
